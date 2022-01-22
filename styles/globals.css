@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.label-gradient {
+  background: linear-gradient(103.85deg, #6763fd 5.47%, #b84ef1 96.28%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.button-gradient {
+  background: linear-gradient(103.85deg, #6763fd 5.47%, #b84ef1 96.28%);
+}
+
+.activity-gradient {
+  background: linear-gradient(
+    103.85deg,
+    rgba(103, 99, 253, 0.1) 5.47%,
+    rgba(184, 78, 241, 0.1) 96.28%
+  );
+}
+
+@layer components {
+  .banner {
+    background: url("/svg/banner.svg"),
+      linear-gradient(103.85deg, #6763fd 5.47%, #b84ef1 96.28%);
+    background-size: contain;
+    @apply rounded-lg sm:rounded-[20px] h-[144px] sm:h-[320px] bg-right-bottom
+      bg-no-repeat px-3 py-4 sm:px-[39px] sm:py-[53px] flex flex-col justify-between;
+  }
+}
