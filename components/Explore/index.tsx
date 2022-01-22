@@ -26,7 +26,7 @@ const Explore: FC<ExploreProps> = ({ featuredArtworks }) => {
                 layout="fill"
                 objectFit="cover"
                 objectPosition="center"
-                alt="Art"
+                alt={artwork.name}
               />
               <section className="relative z-10 p-3 flex flex-col justify-between h-full">
                 <section className="flex justify-between">
