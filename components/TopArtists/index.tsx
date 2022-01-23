@@ -8,7 +8,7 @@ interface TopArtists {
 
 const TopArtists: FC<TopArtists> = ({ topArtists }) => {
   return (
-    <div className="w-[333px] p-5 bg-secondary-black rounded-[20px] flex flex-col gap-5">
+    <div className="w-full sm:w-[333px] p-5 bg-secondary-black rounded-[20px] flex flex-col gap-5">
       <h1 className="text-[20px] font-semibold">Top Artist</h1>
 
       {topArtists.map((artist, index) => (
