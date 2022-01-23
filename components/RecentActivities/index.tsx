@@ -14,6 +14,23 @@ const RecentActivities: FC<RecentActivitiesProps> = ({ recentActivities }) => {
       <h1 className="text-[20px] font-semibold mb-5">Recent Activity</h1>
 
       <section className="flex flex-col gap-3">
+        {recentActivities.map((activity) => (
+          <section key={activity.id} className="activity-tile">
+            <Image
+              src={avatars[random()].url}
+              width={40}
+              height={40}
+              alt="Person"
+              className="rounded-full object-cover object-center"
+            />
+
+            <section className="h-full flex flex-col justify-between ml-2">
+              <p className="text-base font-medium">{activity.name}</p>
+              <p className="text-xs text-primary-gray">{activity.message}</p>
+            </section>
+          </section>
+        ))}
+
         {/* Active */}
         {/* <section className="w-full h-[67px] bg-opacity-5 rounded-xl flex p-3 items-center activity-gradient">
           <Image
@@ -34,26 +51,6 @@ const RecentActivities: FC<RecentActivitiesProps> = ({ recentActivities }) => {
             </p>
           </section>
         </section> */}
-
-        {recentActivities.map((activity) => (
-          <section
-            key={activity.id}
-            className="w-full h-[67px] bg-white bg-opacity-5 rounded-xl flex p-3 items-center"
-          >
-            <Image
-              src={avatars[random()].url}
-              width={40}
-              height={40}
-              alt="Person"
-              className="rounded-full object-cover object-center"
-            />
-
-            <section className="h-full flex flex-col justify-between ml-2">
-              <p className="text-base font-medium">{activity.name}</p>
-              <p className="text-xs text-primary-gray">{activity.message}</p>
-            </section>
-          </section>
-        ))}
       </section>
     </div>
   );

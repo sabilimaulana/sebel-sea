@@ -8,6 +8,7 @@ import RecentActivities from "components/RecentActivities";
 import axios from "axios";
 import { Artwork, Activity, Artist } from "types";
 import Head from "next/head";
+import { useState } from "react";
 
 interface HomeProps {
   featuredArtworks: Artwork[];
@@ -20,8 +21,10 @@ const Home: NextPage<HomeProps> = ({
   recentActivities,
   topArtists,
 }) => {
+  const [isShowSidebar, setIsShowSidebar] = useState<boolean>(false);
+
   return (
-    <div className="flex bg-primary-black font-poppins text-white">
+    <div className="flex min-h-screen bg-primary-black font-poppins text-white">
       <Head>
         <title>Sebel Sea</title>
         <meta
@@ -31,24 +34,26 @@ const Home: NextPage<HomeProps> = ({
         <meta property="og:title" content="One Stop NFT Marketplace" />
         <meta
           property="og:description"
-          content="Discover limited-edition digital artwort. Create, Sell, and Collect yours now!
-"
+          content="Discover limited-edition digital artwort. Create, Sell, and Collect yours now!"
         />
       </Head>
-      <Sidebar />
 
-      <div className="p-4 sm:p-5 flex flex-col w-full gap-4 sm:gap-7">
-        <Header />
-        <section className="border-b border-white w-screen -ml-4 opacity-10 sm:hidden" />
+      <Sidebar
+        isShowSidebar={isShowSidebar}
+        setIsShowSidebar={setIsShowSidebar}
+      />
+      <div className="py-4 sm:p-5 flex flex-col w-full gap-4 sm:gap-7 overflow-x-hidden">
+        <Header setIsShowSidebar={setIsShowSidebar} />
+        <section className="border-b border-white w-screen opacity-10 sm:hidden" />
 
         <div className="w-full flex flex-col xl:flex-row gap-5 mb-1 sm:mb-14">
-          <div className="w-full">
+          <div className="w-full overflow-x-auto">
             <Banner />
 
             <Explore featuredArtworks={featuredArtworks} />
           </div>
 
-          <div className="flex flex-col md:flex-row xl:flex-col gap-7">
+          <div className="flex flex-col md:flex-row xl:flex-col gap-7 px-4 sm:px-0">
             <TopArtists topArtists={topArtists} />
             <RecentActivities recentActivities={recentActivities} />
           </div>
@@ -59,9 +64,8 @@ const Home: NextPage<HomeProps> = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const baseUrl =
-    "https://6196ed95af46280017e7e326.mockapi.io/waveast/api/nft-marketplace";
-  let response;
+  const baseUrl = process.env.API_URL || "";
+  let response: any;
 
   try {
     // response = await axios.get(`${baseUrl}/users`);

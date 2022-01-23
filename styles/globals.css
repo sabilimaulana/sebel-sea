@@ -26,6 +26,22 @@
       linear-gradient(103.85deg, #6763fd 5.47%, #b84ef1 96.28%);
     background-size: contain;
     @apply rounded-lg sm:rounded-[20px] h-[144px] sm:h-[320px] bg-right-bottom
-      bg-no-repeat px-3 py-4 sm:px-[39px] sm:py-[53px] flex flex-col justify-between;
+      bg-no-repeat  mx-4 sm:mx-0 px-3 py-4 sm:px-[39px] sm:py-[53px] flex flex-col justify-between;
+  }
+
+  .artwork-card {
+    @apply sm:hover:scale-105 w-full min-w-[291px] snap-start scroll-ml-4 sm:min-w-0 h-[336px] bg-secondary-black rounded-xl p-3 sm:ml-0 sm:mr-0 transition duration-300 cursor-pointer;
+  }
+
+  .category-capsule {
+    @apply py-3 px-6 flex items-center rounded-[20px] sm:m-0 transition duration-300;
+  }
+
+  .artist-tile {
+    @apply flex items-center;
+  }
+
+  .activity-tile {
+    @apply w-full h-[67px] bg-white bg-opacity-5 rounded-xl flex p-3 items-center;
   }
 }
