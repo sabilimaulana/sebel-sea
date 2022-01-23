@@ -9,6 +9,7 @@ import axios from "axios";
 import { Artwork, Activity, Artist } from "types";
 import Head from "next/head";
 import { useState } from "react";
+import { random } from "utils/number";
 
 interface HomeProps {
   featuredArtworks: Artwork[];
@@ -71,8 +72,16 @@ export const getStaticProps: GetStaticProps = async () => {
     // response = await axios.get(`${baseUrl}/users`);
     // const users = response.data;
 
+    response = await axios.get(
+      "https://pixabay.com/api/?key=" + process.env.PIXABAY_KEY
+    );
+    const photos = response.data.hits.map((item) => item.webformatURL) || [];
+
     response = await axios.get(`${baseUrl}/featured-artworks`);
-    const featuredArtworks = response.data;
+    const featuredArtworks = response.data.map((item) => ({
+      ...item,
+      artworksUrl: photos[random(0, photos.length - 1)],
+    }));
 
     response = await axios.get(`${baseUrl}/recent-activities`);
     const recentActivities = response.data;
