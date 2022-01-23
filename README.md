@@ -1,3 +1,15 @@
+## Challenge from waveast!
+
+
+
+Challenge: NFT Marketplace
+
+Design by: [@mhdfariz](https://dribbble.com/shots/17047721--Exploration-NFT-Marketplace) 
+
+Demo : [Sebel Sea](https://sebel-sea.vercel.app/)
+
+Thank You!
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
