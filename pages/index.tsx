@@ -87,6 +87,7 @@ export const getStaticProps: GetStaticProps = async () => {
         recentActivities,
         topArtists,
       },
+      revalidate: 60,
     };
   } catch (error) {
     return {
@@ -96,6 +97,7 @@ export const getStaticProps: GetStaticProps = async () => {
         recentActivities: [],
         topArtists: [],
       },
+      revalidate: 60,
     };
   }
 };
