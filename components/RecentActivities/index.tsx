@@ -10,7 +10,7 @@ interface RecentActivitiesProps {
 
 const RecentActivities: FC<RecentActivitiesProps> = ({ recentActivities }) => {
   return (
-    <div className="min-w-[333px] w-full p-5 bg-secondary-black rounded-[20px] flex flex-col">
+    <div className="w-[333px] p-5 bg-secondary-black rounded-[20px] flex flex-col">
       <h1 className="text-[20px] font-semibold mb-5">Recent Activity</h1>
 
       <section className="flex flex-col gap-3">

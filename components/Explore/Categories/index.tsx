@@ -16,7 +16,7 @@ const Categories = () => {
   );
 
   return (
-    <div className="w-full flex gap-4 mt-3 overflow-x-auto">
+    <div className="overflow-x-auto flex gap-4 mt-3 sm:max-w-[calc(100vw+4px-333px-122px-5rem)]">
       {categories.map((category, index) => (
         <Capsule
           key={category}
@@ -25,7 +25,7 @@ const Categories = () => {
             index === 0 ? "ml-4" : index === categories.length - 1 && "mr-4"
           } ${
             selectedCategory === category
-              ? "bg-white bg-opacity-30 border-2 border-[#7B6FE5] cursor-default"
+              ? "bg-white bg-opacity-30 border-2 border-[#7B6FE5]"
               : "bg-secondary-black hover:opacity-70 cursor-pointer"
           }`}
           setSelectedCategory={setSelectedCategory}

@@ -46,8 +46,8 @@ const Home: NextPage<HomeProps> = ({
         <Header setIsShowSidebar={setIsShowSidebar} />
         <section className="border-b border-white w-screen opacity-10 sm:hidden" />
 
-        <div className="w-full flex flex-col xl:flex-row gap-5 mb-1 sm:mb-14">
-          <div className="w-full overflow-x-auto">
+        <div className="flex flex-col xl:flex-row gap-5 mb-1 sm:mb-14">
+          <div className="w-full">
             <Banner />
 
             <Explore featuredArtworks={featuredArtworks} />

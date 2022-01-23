@@ -20,6 +20,12 @@
   );
 }
 
+@media (min-width: 640px) {
+  .categories-screen {
+    width: calc(100vw - 333px - 122px);
+  }
+}
+
 @layer components {
   .banner {
     background: url("/svg/banner.svg"),
