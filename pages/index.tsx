@@ -5,11 +5,12 @@ import Banner from "components/Banner";
 import Explore from "components/Explore";
 import TopArtists from "components/TopArtists";
 import RecentActivities from "components/RecentActivities";
-import axios from "axios";
 import { Artwork, Activity, Artist } from "types";
 import Head from "next/head";
 import { useState } from "react";
-import { random } from "utils/number";
+import { getFeaturedArtworks } from "services/artwork";
+import { getRecentActivities } from "services/activity";
+import { getTopArtists } from "services/artist";
 
 interface HomeProps {
   featuredArtworks: Artwork[];
@@ -65,29 +66,13 @@ const Home: NextPage<HomeProps> = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const baseUrl = process.env.API_URL || "";
-  let response: any;
-
   try {
     // response = await axios.get(`${baseUrl}/users`);
     // const users = response.data;
 
-    response = await axios.get(
-      "https://pixabay.com/api/?key=" + process.env.PIXABAY_KEY
-    );
-    const photos = response.data.hits.map((item) => item.webformatURL) || [];
-
-    response = await axios.get(`${baseUrl}/featured-artworks`);
-    const featuredArtworks = response.data.map((item) => ({
-      ...item,
-      artworksUrl: photos[random(0, photos.length - 1)],
-    }));
-
-    response = await axios.get(`${baseUrl}/recent-activities`);
-    const recentActivities = response.data;
-
-    response = await axios.get(`${baseUrl}/top-artist`);
-    const topArtists = response.data;
+    const featuredArtworks = await getFeaturedArtworks();
+    const recentActivities = await getRecentActivities();
+    const topArtists = await getTopArtists();
 
     return {
       props: {
@@ -96,7 +81,6 @@ export const getStaticProps: GetStaticProps = async () => {
         recentActivities,
         topArtists,
       },
-      revalidate: 60,
     };
   } catch (error) {
     return {
@@ -106,7 +90,6 @@ export const getStaticProps: GetStaticProps = async () => {
         recentActivities: [],
         topArtists: [],
       },
-      revalidate: 60,
     };
   }
 };
