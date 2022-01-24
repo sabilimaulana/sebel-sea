@@ -1,5 +1,4 @@
 import Categories from "components/Explore/Categories";
-import { FC } from "react";
 import { Artwork } from "types";
 import Card from "components/Explore/Card";
 
@@ -7,7 +6,7 @@ interface ExploreProps {
   featuredArtworks: Artwork[];
 }
 
-const Explore: FC<ExploreProps> = ({ featuredArtworks }) => {
+const Explore = ({ featuredArtworks }: ExploreProps) => {
   return (
     <section className="mt-7 w-full">
       <h1 className="text-[20px] font-semibold px-4 sm:px-0">Explore</h1>

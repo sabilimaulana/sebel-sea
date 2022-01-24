@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 interface CapsuleProps {
   category: string;
@@ -6,11 +6,11 @@ interface CapsuleProps {
   setSelectedCategory: Dispatch<SetStateAction<string>>;
 }
 
-const Capsule: FC<CapsuleProps> = ({
+const Capsule = ({
   category,
   classNames,
   setSelectedCategory,
-}) => {
+}: CapsuleProps) => {
   return (
     <div
       key={category}

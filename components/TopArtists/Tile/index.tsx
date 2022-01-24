@@ -1,6 +1,6 @@
 import { avatars } from "data/avatars";
 import Image from "next/image";
-import { FC, memo, useState } from "react";
+import { memo, useState } from "react";
 import { Artist } from "types";
 import { random } from "utils/number";
 
@@ -20,7 +20,7 @@ const Avatar = memo(function Avatar() {
   );
 });
 
-const Tile: FC<TileProps> = ({ artist, index }) => {
+const Tile = ({ artist, index }: TileProps) => {
   const [isFollow, setIsFollow] = useState<boolean>(random(0, 100) % 2 === 0);
 
   return (

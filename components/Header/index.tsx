@@ -1,11 +1,11 @@
 import Image from "next/image";
-import type { Dispatch, FC, SetStateAction } from "react";
+import type { Dispatch, SetStateAction } from "react";
 
 interface HeaderProps {
   setIsShowSidebar: Dispatch<SetStateAction<boolean>>;
 }
 
-const Header: FC<HeaderProps> = ({ setIsShowSidebar }) => {
+const Header = ({ setIsShowSidebar }: HeaderProps) => {
   return (
     <header className="flex px-4 sm:px-0 gap-5 w-full h-10 sm:h-14 items-center">
       <svg

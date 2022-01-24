@@ -1,6 +1,5 @@
 import { avatars } from "data/avatars";
 import Image from "next/image";
-import { FC } from "react";
 import { Activity } from "types";
 import { random } from "utils/number";
 
@@ -8,7 +7,7 @@ interface RecentActivitiesProps {
   recentActivities: Activity[];
 }
 
-const RecentActivities: FC<RecentActivitiesProps> = ({ recentActivities }) => {
+const RecentActivities = ({ recentActivities }: RecentActivitiesProps) => {
   return (
     <div className="w-full sm:w-[333px] p-5 bg-secondary-black rounded-[20px] flex flex-col">
       <h1 className="text-[20px] font-semibold mb-5">Recent Activity</h1>

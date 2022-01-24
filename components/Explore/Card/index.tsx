@@ -2,7 +2,7 @@ import Image from "next/image";
 import { avatars } from "data/avatars";
 import { random } from "utils/number";
 import { Artwork } from "types";
-import { FC, memo, useState } from "react";
+import { memo, useState } from "react";
 
 const People = memo(function People() {
   return (
@@ -31,7 +31,7 @@ interface CardProps {
   classNames: string;
 }
 
-const Card: FC<CardProps> = ({ artwork, classNames }) => {
+const Card = ({ artwork, classNames }: CardProps) => {
   const [isLiked, setIsLiked] = useState<boolean>(false);
 
   return (

@@ -1,12 +1,12 @@
 import Image from "next/image";
-import type { Dispatch, FC, SetStateAction } from "react";
+import type { Dispatch, SetStateAction } from "react";
 
 interface SidebarProps {
   isShowSidebar: boolean;
   setIsShowSidebar: Dispatch<SetStateAction<boolean>>;
 }
 
-const Sidebar: FC<SidebarProps> = ({ isShowSidebar, setIsShowSidebar }) => {
+const Sidebar = ({ isShowSidebar, setIsShowSidebar }: SidebarProps) => {
   const navClass = `${
     isShowSidebar ? "fixed" : "hidden"
   } z-20 w-screen lg:w-auto bg-primary-black lg:static lg:flex flex-col min-w-[122px] min-h-screen lg:bg-secondary-black`;
