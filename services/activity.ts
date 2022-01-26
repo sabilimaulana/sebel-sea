@@ -1,7 +1,7 @@
-import axios from "axios";
-import { Activity } from "types";
+import axios from 'axios';
+import { Activity } from 'types';
 
-const baseUrl = process.env.API_URL || "";
+const baseUrl = process.env.API_URL || '';
 
 export const getRecentActivities = async (): Promise<Activity[]> => {
   try {

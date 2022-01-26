@@ -1,5 +1,5 @@
-import { Artist } from "types";
-import Tile from "components/TopArtists/Tile";
+import { Artist } from 'types';
+import Tile from 'components/TopArtists/Tile';
 
 interface TopArtists {
   topArtists: Artist[];
@@ -7,7 +7,7 @@ interface TopArtists {
 
 const TopArtists = ({ topArtists }: TopArtists) => {
   return (
-    <div className="w-full sm:w-[333px] p-5 bg-secondary-black rounded-[20px] flex flex-col gap-5">
+    <div className="flex w-full flex-col gap-5 rounded-[20px] bg-secondary-black p-5 sm:w-[333px]">
       <h1 className="text-[20px] font-semibold">Top Artist</h1>
 
       {topArtists.map((artist, index) => (

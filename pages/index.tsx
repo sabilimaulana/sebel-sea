@@ -1,16 +1,16 @@
-import type { GetStaticProps, NextPage } from "next";
-import Sidebar from "components/Sidebar";
-import Header from "components/Header";
-import Banner from "components/Banner";
-import Explore from "components/Explore";
-import TopArtists from "components/TopArtists";
-import RecentActivities from "components/RecentActivities";
-import { Artwork, Activity, Artist } from "types";
-import Head from "next/head";
-import { useState } from "react";
-import { getFeaturedArtworks } from "services/artwork";
-import { getRecentActivities } from "services/activity";
-import { getTopArtists } from "services/artist";
+import type { GetStaticProps, NextPage } from 'next';
+import Sidebar from 'components/Sidebar';
+import Header from 'components/Header';
+import Banner from 'components/Banner';
+import Explore from 'components/Explore';
+import TopArtists from 'components/TopArtists';
+import RecentActivities from 'components/RecentActivities';
+import { Artwork, Activity, Artist } from 'types';
+import Head from 'next/head';
+import { useState } from 'react';
+import { getFeaturedArtworks } from 'services/artwork';
+import { getRecentActivities } from 'services/activity';
+import { getTopArtists } from 'services/artist';
 
 interface HomeProps {
   featuredArtworks: Artwork[];
@@ -21,7 +21,7 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({
   featuredArtworks,
   recentActivities,
-  topArtists,
+  topArtists
 }) => {
   const [isShowSidebar, setIsShowSidebar] = useState<boolean>(false);
 
@@ -44,18 +44,18 @@ const Home: NextPage<HomeProps> = ({
         isShowSidebar={isShowSidebar}
         setIsShowSidebar={setIsShowSidebar}
       />
-      <div className="py-4 sm:p-5 flex flex-col w-full gap-4 sm:gap-7 overflow-x-hidden">
+      <div className="flex w-full flex-col gap-4 overflow-x-hidden py-4 sm:gap-7 sm:p-5">
         <Header setIsShowSidebar={setIsShowSidebar} />
-        <section className="border-b border-white w-screen opacity-10 sm:hidden" />
+        <section className="w-screen border-b border-white opacity-10 sm:hidden" />
 
-        <div className="flex flex-col xl:flex-row gap-5 mb-1 sm:mb-14">
+        <div className="mb-1 flex flex-col gap-5 sm:mb-14 xl:flex-row">
           <div className="w-full">
             <Banner />
 
             <Explore featuredArtworks={featuredArtworks} />
           </div>
 
-          <div className="flex flex-col md:flex-row xl:flex-col gap-7 px-4 sm:px-0">
+          <div className="flex flex-col gap-7 px-4 sm:px-0 md:flex-row xl:flex-col">
             <TopArtists topArtists={topArtists} />
             <RecentActivities recentActivities={recentActivities} />
           </div>
@@ -79,8 +79,8 @@ export const getStaticProps: GetStaticProps = async () => {
         // users,
         featuredArtworks,
         recentActivities,
-        topArtists,
-      },
+        topArtists
+      }
     };
   } catch (error) {
     return {
@@ -88,8 +88,8 @@ export const getStaticProps: GetStaticProps = async () => {
         // users: [],
         featuredArtworks: [],
         recentActivities: [],
-        topArtists: [],
-      },
+        topArtists: []
+      }
     };
   }
 };

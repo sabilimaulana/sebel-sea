@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react';
 
 interface CapsuleProps {
   category: string;
@@ -9,12 +9,12 @@ interface CapsuleProps {
 const Capsule = ({
   category,
   classNames,
-  setSelectedCategory,
+  setSelectedCategory
 }: CapsuleProps) => {
   return (
     <div
       key={category}
-      className={`${classNames} sm:m-0 category-capsule`}
+      className={`${classNames} category-capsule sm:m-0`}
       onClick={() => setSelectedCategory(category)}
     >
       <p className="whitespace-nowrap">{category}</p>

@@ -1,8 +1,8 @@
-import Image from "next/image";
-import { avatars } from "data/avatars";
-import { random } from "utils/number";
-import { Artwork } from "types";
-import { memo, useState } from "react";
+import Image from 'next/image';
+import { avatars } from 'data/avatars';
+import { random } from 'utils/number';
+import { Artwork } from 'types';
+import { memo, useState } from 'react';
 
 const People = memo(function People() {
   return (
@@ -19,7 +19,7 @@ const People = memo(function People() {
         </section>
       ))}
 
-      <section className="-ml-2 relative bg-secondary-purple h-9 w-9 rounded-full flex items-center justify-center">
+      <section className="relative -ml-2 flex h-9 w-9 items-center justify-center rounded-full bg-secondary-purple">
         <p className="text-xs">{random(1, 100)}+</p>
       </section>
     </section>
@@ -35,8 +35,8 @@ const Card = ({ artwork, classNames }: CardProps) => {
   const [isLiked, setIsLiked] = useState<boolean>(false);
 
   return (
-    <section key={artwork.id} className={`${classNames} sm:m-0 artwork-card`}>
-      <section className="relative w-full h-40 rounded-xl">
+    <section key={artwork.id} className={`${classNames} artwork-card sm:m-0`}>
+      <section className="relative h-40 w-full rounded-xl">
         <Image
           src={artwork.artworksUrl}
           layout="fill"
@@ -45,17 +45,17 @@ const Card = ({ artwork, classNames }: CardProps) => {
           alt={artwork.name}
           className="rounded-xl"
         />
-        <section className="relative z-10 p-3 flex flex-col justify-between h-full">
+        <section className="relative z-10 flex h-full flex-col justify-between p-3">
           <section className="flex justify-between">
-            <section className="w-12 h-8 rounded-xl flex items-center justify-center bg-[#c4c4c4] bg-opacity-20">
+            <section className="flex h-8 w-12 items-center justify-center rounded-xl bg-[#c4c4c4] bg-opacity-20">
               <p>Art</p>
             </section>
 
-            <section className="w-10 h-10 rounded-full cursor-pointer flex items-center justify-center bg-[#c4c4c4] bg-opacity-20">
+            <section className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-[#c4c4c4] bg-opacity-20">
               {isLiked ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-red-500 hover:scale-125 transition duration-300"
+                  className="h-6 w-6 text-red-500 transition duration-300 hover:scale-125"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   onClick={() => setIsLiked(false)}
@@ -69,7 +69,7 @@ const Card = ({ artwork, classNames }: CardProps) => {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 hover:scale-125 transition duration-300"
+                  className="h-6 w-6 transition duration-300 hover:scale-125"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -86,20 +86,20 @@ const Card = ({ artwork, classNames }: CardProps) => {
             </section>
           </section>
 
-          <section className="flex justify-center items-center absolute bottom-0 left-0 w-full bg-[#262D3A] bg-opacity-80 h-[29px]">
+          <section className="absolute bottom-0 left-0 flex h-[29px] w-full items-center justify-center bg-[#262D3A] bg-opacity-80">
             <p className="text-sm">Ends in : 50h : 30m :20s</p>
           </section>
         </section>
       </section>
 
-      <section className="flex justify-between items-center mt-4 h-7 text-sm">
+      <section className="mt-4 flex h-7 items-center justify-between text-sm">
         <p className="">Current Bid : </p>
         <p className="text-secondary-purple">{artwork.currentBid} ETH</p>
       </section>
 
       <h2 className="mt-3">{artwork.name}</h2>
 
-      <section className="border-[1px] border-white opacity-10 mt-4" />
+      <section className="mt-4 border-[1px] border-white opacity-10" />
       <People />
     </section>
   );

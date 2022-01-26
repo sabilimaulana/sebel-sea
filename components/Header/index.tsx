@@ -1,5 +1,5 @@
-import Image from "next/image";
-import type { Dispatch, SetStateAction } from "react";
+import Image from 'next/image';
+import type { Dispatch, SetStateAction } from 'react';
 
 interface HeaderProps {
   setIsShowSidebar: Dispatch<SetStateAction<boolean>>;
@@ -7,10 +7,10 @@ interface HeaderProps {
 
 const Header = ({ setIsShowSidebar }: HeaderProps) => {
   return (
-    <header className="flex px-4 sm:px-0 gap-5 w-full h-10 sm:h-14 items-center">
+    <header className="flex h-10 w-full items-center gap-5 px-4 sm:h-14 sm:px-0">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="min-w-[24px] h-6 w-6 lg:hidden"
+        className="h-6 w-6 min-w-[24px] lg:hidden"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -24,8 +24,8 @@ const Header = ({ setIsShowSidebar }: HeaderProps) => {
         />
       </svg>
 
-      <div className="relative flex-grow h-full">
-        <section className="flex h-full w-12 absolute justify-center">
+      <div className="relative h-full flex-grow">
+        <section className="absolute flex h-full w-12 justify-center">
           <Image src="/svg/search.svg" width={24} height={24} alt="Search" />
         </section>
 
@@ -33,23 +33,23 @@ const Header = ({ setIsShowSidebar }: HeaderProps) => {
           type="text"
           name="search"
           id="search"
-          className="pl-12 h-full rounded-lg md:rounded-xl bg-secondary-black outline-none w-full"
+          className="h-full w-full rounded-lg bg-secondary-black pl-12 outline-none md:rounded-xl"
           placeholder="Search"
         />
       </div>
 
-      <div className="hidden bg-secondary-black rounded-xl px-3 py-4 md:flex gap-[10px] w-[215px]">
+      <div className="hidden w-[215px] gap-[10px] rounded-xl bg-secondary-black px-3 py-4 md:flex">
         <Image src="/svg/ethereum.svg" width={24} height={24} alt="Ethereum" />
 
-        <p className="text-heading-5 whitespace-nowrap">543,694,666 ETH</p>
+        <p className="whitespace-nowrap text-heading-5">543,694,666 ETH</p>
       </div>
 
-      <div className="w-auto gap-4 sm:gap-0 sm:w-[333px] flex justify-between">
+      <div className="flex w-auto justify-between gap-4 sm:w-[333px] sm:gap-0">
         <div className="flex gap-2">
-          <div className="rounded-full h-10 w-10 bg-secondary-black flex items-center justify-center cursor-pointer hover:opacity-70 transition duration-300">
+          <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-secondary-black transition duration-300 hover:opacity-70">
             <Image src="/svg/chat.svg" height={24} width={24} alt="Chat" />
           </div>
-          <div className="rounded-full h-10 w-10 bg-secondary-black flex items-center justify-center cursor-pointer hover:opacity-70 transition duration-300">
+          <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-secondary-black transition duration-300 hover:opacity-70">
             <Image
               src="/svg/notification.svg"
               height={24}
@@ -60,7 +60,7 @@ const Header = ({ setIsShowSidebar }: HeaderProps) => {
         </div>
 
         <section className="flex items-center gap-5 ">
-          <div className="relative min-w-[40px] min-h-[40px] w-10 h-10">
+          <div className="relative h-10 min-h-[40px] w-10 min-w-[40px]">
             <Image
               src="/svg/avatars/avatar-11.svg"
               layout="fill"
@@ -69,7 +69,7 @@ const Header = ({ setIsShowSidebar }: HeaderProps) => {
             />
           </div>
 
-          <p className="hidden md:flex text-heading-5 whitespace-nowrap">
+          <p className="hidden whitespace-nowrap text-heading-5 md:flex">
             Sabili Maulana
           </p>
 
@@ -79,7 +79,7 @@ const Header = ({ setIsShowSidebar }: HeaderProps) => {
               height={24}
               width={24}
               alt="Profile"
-              className="cursor-pointer hover:opacity-70 transition duration-300"
+              className="cursor-pointer transition duration-300 hover:opacity-70"
             />
           </section>
         </section>

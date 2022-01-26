@@ -1,7 +1,7 @@
-import { avatars } from "data/avatars";
-import Image from "next/image";
-import { Activity } from "types";
-import { random } from "utils/number";
+import { avatars } from 'data/avatars';
+import Image from 'next/image';
+import { Activity } from 'types';
+import { random } from 'utils/number';
 
 interface RecentActivitiesProps {
   recentActivities: Activity[];
@@ -9,11 +9,11 @@ interface RecentActivitiesProps {
 
 const RecentActivities = ({ recentActivities }: RecentActivitiesProps) => {
   return (
-    <div className="w-full sm:w-[333px] p-5 bg-secondary-black rounded-[20px] flex flex-col">
-      <h1 className="text-[20px] font-semibold mb-5">Recent Activity</h1>
+    <div className="flex w-full flex-col rounded-[20px] bg-secondary-black p-5 sm:w-[333px]">
+      <h1 className="mb-5 text-[20px] font-semibold">Recent Activity</h1>
 
       <section className="flex flex-col gap-3">
-        {recentActivities.map((activity) => (
+        {recentActivities.map(activity => (
           <section key={activity.id} className="activity-tile">
             <Image
               src={avatars[random()].url}
@@ -23,7 +23,7 @@ const RecentActivities = ({ recentActivities }: RecentActivitiesProps) => {
               className="rounded-full object-cover object-center"
             />
 
-            <section className="h-full flex flex-col justify-between ml-2">
+            <section className="ml-2 flex h-full flex-col justify-between">
               <p className="text-base font-medium">{activity.name}</p>
               <p className="text-xs text-primary-gray">{activity.message}</p>
             </section>

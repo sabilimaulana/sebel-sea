@@ -10,6 +10,8 @@ specifiers:
   eslint-config-next: 12.0.8
   next: 12.0.8
   postcss: ^8.4.5
+  prettier: ^2.5.1
+  prettier-plugin-tailwindcss: ^0.1.3
   react: 17.0.2
   react-dom: 17.0.2
   sharp: ^0.29.3
@@ -31,6 +33,8 @@ devDependencies:
   eslint: 8.7.0
   eslint-config-next: 12.0.8_d011028f00af8e1b72d9c922b3eaaffe
   postcss: 8.4.5
+  prettier: 2.5.1
+  prettier-plugin-tailwindcss: 0.1.3_prettier@2.5.1
   tailwindcss: 3.0.15_ef48b3b8837f8a23677bffe8f9cd866d
   typescript: 4.5.5
 
@@ -2236,6 +2240,20 @@ packages:
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /prettier-plugin-tailwindcss/0.1.3_prettier@2.5.1:
+    resolution: {integrity: sha512-k+X4HfaLHXwGlu3JdW6XahQIk3lvzBtx2F2jSMFmOU6Mqll9dhZdGz1MJFAHxzvLxEWvMWZQA4MmCIhsDid5Kg==}
+    peerDependencies:
+      prettier: '>=2.2.0'
+    dependencies:
+      prettier: 2.5.1
+    dev: true
+
+  /prettier/2.5.1:
+    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /process-nextick-args/2.0.1:

@@ -1,8 +1,8 @@
-import { avatars } from "data/avatars";
-import Image from "next/image";
-import { memo, useState } from "react";
-import { Artist } from "types";
-import { random } from "utils/number";
+import { avatars } from 'data/avatars';
+import Image from 'next/image';
+import { memo, useState } from 'react';
+import { Artist } from 'types';
+import { random } from 'utils/number';
 
 interface TileProps {
   artist: Artist;
@@ -25,26 +25,26 @@ const Tile = ({ artist, index }: TileProps) => {
 
   return (
     <section key={artist.id} className="artist-tile">
-      <h3 className="text-heading-[20px] font-semibold mr-2">{index + 1}.</h3>
-      <section className="w-10 h-10 relative">
+      <h3 className="text-heading-[20px] mr-2 font-semibold">{index + 1}.</h3>
+      <section className="relative h-10 w-10">
         <Avatar />
       </section>
-      <section className="flex-grow ml-2 overflow-hidden">
-        <p className="text-heading-5 font-medium text-ellipsis  whitespace-nowrap overflow-hidden mr-4">
+      <section className="ml-2 flex-grow overflow-hidden">
+        <p className="mr-4 overflow-hidden text-ellipsis  whitespace-nowrap text-heading-5 font-medium">
           {artist.name}
         </p>
         <p className="text-heading-6 text-primary-gray">@{artist.username}</p>
       </section>
       {isFollow ? (
         <p
-          className="text-xs text-primary-purple cursor-pointer"
+          className="cursor-pointer text-xs text-primary-purple"
           onClick={() => setIsFollow(false)}
         >
           Following
         </p>
       ) : (
         <button
-          className="button-gradient rounded-lg text-heading-6 px-[10px] h-[30px] cursor-pointer hover:opacity-70 transition duration-300"
+          className="button-gradient h-[30px] cursor-pointer rounded-lg px-[10px] text-heading-6 transition duration-300 hover:opacity-70"
           onClick={() => setIsFollow(true)}
         >
           Follow

@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <div className="banner">
-      <h1 className="text-base sm:text-[40px] font-semibold">
+      <h1 className="text-base font-semibold sm:text-[40px]">
         One Stop NFT Marketplace
       </h1>
       <p className="text-[11px] sm:text-sm">
@@ -9,14 +9,14 @@ const Banner = () => {
         Collect yours now!
       </p>
 
-      <div className="flex gap-1 sm:gap-4 sm:mb-4 ">
-        <button className="h-[20px] sm:h-[45px] w-[72px] sm:w-[148px] bg-white rounded-[4px] sm:rounded-lg">
+      <div className="flex gap-1 sm:mb-4 sm:gap-4 ">
+        <button className="h-[20px] w-[72px] rounded-[4px] bg-white sm:h-[45px] sm:w-[148px] sm:rounded-lg">
           <p className="label-gradient text-[8px] sm:text-heading-5">
             Start Create
           </p>
         </button>
 
-        <button className="h-[20px] sm:h-[45px] w-[72px] sm:w-[148px] bg-white rounded-[4px] sm:rounded-lg">
+        <button className="h-[20px] w-[72px] rounded-[4px] bg-white sm:h-[45px] sm:w-[148px] sm:rounded-lg">
           <p className="label-gradient text-[8px] sm:text-heading-5">
             How It works
           </p>

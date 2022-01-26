@@ -1,10 +1,8 @@
 ## Challenge from waveast!
 
-
-
 Challenge: NFT Marketplace
 
-Design by: [@mhdfariz](https://dribbble.com/shots/17047721--Exploration-NFT-Marketplace) 
+Design by: [@mhdfariz](https://dribbble.com/shots/17047721--Exploration-NFT-Marketplace)
 
 Demo : [Sebel Sea](https://sebel-sea.vercel.app/)
 

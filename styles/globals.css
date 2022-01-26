@@ -28,19 +28,19 @@
 
 @layer components {
   .banner {
-    background: url("/svg/banner.svg"),
+    background: url('/svg/banner.svg'),
       linear-gradient(103.85deg, #6763fd 5.47%, #b84ef1 96.28%);
     background-size: contain;
-    @apply rounded-lg sm:rounded-[20px] h-[144px] sm:h-[320px] bg-right-bottom
-      bg-no-repeat  mx-4 sm:mx-0 px-3 py-4 sm:px-[39px] sm:py-[53px] flex flex-col justify-between;
+    @apply mx-4 flex h-[144px] flex-col justify-between
+      rounded-lg  bg-right-bottom bg-no-repeat px-3 py-4 sm:mx-0 sm:h-[320px] sm:rounded-[20px] sm:px-[39px] sm:py-[53px];
   }
 
   .artwork-card {
-    @apply sm:hover:scale-105 w-full min-w-[291px] snap-start scroll-ml-4 sm:min-w-0 h-[336px] bg-secondary-black rounded-xl p-3 sm:ml-0 sm:mr-0 transition duration-300 cursor-pointer;
+    @apply h-[336px] w-full min-w-[291px] cursor-pointer snap-start scroll-ml-4 rounded-xl bg-secondary-black p-3 transition duration-300 sm:ml-0 sm:mr-0 sm:min-w-0 sm:hover:scale-105;
   }
 
   .category-capsule {
-    @apply py-3 px-6 flex items-center rounded-[20px] sm:m-0 transition duration-300;
+    @apply flex items-center rounded-[20px] py-3 px-6 transition duration-300 sm:m-0;
   }
 
   .artist-tile {
@@ -48,6 +48,6 @@
   }
 
   .activity-tile {
-    @apply w-full h-[67px] bg-white bg-opacity-5 rounded-xl flex p-3 items-center;
+    @apply flex h-[67px] w-full items-center rounded-xl bg-white bg-opacity-5 p-3;
   }
 }
