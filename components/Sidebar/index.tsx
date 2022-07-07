@@ -61,17 +61,7 @@ const Sidebar = ({ isShowSidebar, setIsShowSidebar }: SidebarProps) => {
           </section>
         </section>
 
-        {/* <div className="flex px-8 lg:justify-center items-center h-[84px] bg-white bg-opacity-10 border-l-4 border-primary-purple gap-9">
-          <Image
-            src="/svg/dashboard.svg"
-            width={36}
-            height={36}
-            alt="Dashboard"
-          />
-          <p className="lg:hidden">Dashboard</p>
-        </div> */}
-
-        <div className="flex h-[84px] cursor-pointer items-center gap-9 px-8 transition duration-300 hover:bg-white hover:bg-opacity-5 hover:opacity-70 lg:justify-center">
+        <div className="dashboard-menu-tile">
           <Image
             src="/svg/dashboard.svg"
             width={36}
@@ -81,7 +71,7 @@ const Sidebar = ({ isShowSidebar, setIsShowSidebar }: SidebarProps) => {
 
           <p className="lg:hidden">Dashboard</p>
         </div>
-        <div className="flex h-[84px] cursor-pointer items-center gap-9 px-8 transition duration-300 hover:bg-white hover:bg-opacity-5 hover:opacity-70 lg:justify-center">
+        <div className="dashboard-menu-tile">
           <Image
             src="/svg/transaction.svg"
             width={36}
@@ -90,15 +80,15 @@ const Sidebar = ({ isShowSidebar, setIsShowSidebar }: SidebarProps) => {
           />
           <p className="lg:hidden">Activity</p>
         </div>
-        <div className="flex h-[84px] cursor-pointer items-center gap-9 px-8 transition duration-300 hover:bg-white hover:bg-opacity-5 hover:opacity-70 lg:justify-center">
+        <div className="dashboard-menu-tile">
           <Image src="/svg/note.svg" width={36} height={36} alt="Transaction" />
           <p className="lg:hidden">Transaction</p>
         </div>
-        <div className="flex h-[84px] cursor-pointer items-center gap-9 px-8 transition duration-300 hover:bg-white hover:bg-opacity-5 hover:opacity-70 lg:justify-center">
+        <div className="dashboard-menu-tile">
           <Image src="/svg/package.svg" width={36} height={36} alt="Package" />
           <p className="lg:hidden">My Collection</p>
         </div>
-        <div className="flex h-[84px] cursor-pointer items-center gap-9 px-8 transition duration-300 hover:bg-white hover:bg-opacity-5 hover:opacity-70 lg:justify-center">
+        <div className="dashboard-menu-tile">
           <Image src="/svg/gear.svg" width={36} height={36} alt="Setting" />
           <p className="lg:hidden">Setting</p>
         </div>

@@ -25,26 +25,21 @@ const Tile = ({ artist, index }: TileProps) => {
 
   return (
     <section key={artist.id} className="artist-tile">
-      <h3 className="text-heading-[20px] mr-2 font-semibold">{index + 1}.</h3>
+      <h3 className="no">{index + 1}.</h3>
       <section className="relative h-10 w-10">
         <Avatar />
       </section>
       <section className="ml-2 flex-grow overflow-hidden">
-        <p className="mr-4 overflow-hidden text-ellipsis  whitespace-nowrap text-heading-5 font-medium">
-          {artist.name}
-        </p>
-        <p className="text-heading-6 text-primary-gray">@{artist.username}</p>
+        <p className="name">{artist.name}</p>
+        <p className="username">@{artist.username}</p>
       </section>
       {isFollow ? (
-        <p
-          className="cursor-pointer text-xs text-primary-purple"
-          onClick={() => setIsFollow(false)}
-        >
+        <p className="button-following" onClick={() => setIsFollow(false)}>
           Following
         </p>
       ) : (
         <button
-          className="button-gradient h-[30px] cursor-pointer rounded-lg px-[10px] text-heading-6 transition duration-300 hover:opacity-70"
+          className="button-gradient button-follow"
           onClick={() => setIsFollow(true)}
         >
           Follow

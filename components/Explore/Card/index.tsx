@@ -47,7 +47,7 @@ const Card = ({ artwork, classNames }: CardProps) => {
         />
         <section className="relative z-10 flex h-full flex-col justify-between p-3">
           <section className="flex justify-between">
-            <section className="flex h-8 w-12 items-center justify-center rounded-xl bg-[#c4c4c4] bg-opacity-20">
+            <section className="category">
               <p>Art</p>
             </section>
 
@@ -86,7 +86,7 @@ const Card = ({ artwork, classNames }: CardProps) => {
             </section>
           </section>
 
-          <section className="absolute bottom-0 left-0 flex h-[29px] w-full items-center justify-center bg-[#262D3A] bg-opacity-80">
+          <section className="countdown">
             <p className="text-sm">Ends in : 50h : 30m :20s</p>
           </section>
         </section>

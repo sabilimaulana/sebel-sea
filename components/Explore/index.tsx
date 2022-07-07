@@ -19,7 +19,9 @@ const Explore = ({ featuredArtworks }: ExploreProps) => {
             classNames={`${
               index === 0
                 ? 'ml-4'
-                : index === featuredArtworks.length - 1 && 'mr-4'
+                : index === featuredArtworks.length - 1
+                ? 'mr-4'
+                : ''
             }`}
           />
         ))}

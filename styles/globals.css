@@ -39,6 +39,14 @@
     @apply h-[336px] w-full min-w-[291px] cursor-pointer snap-start scroll-ml-4 rounded-xl bg-secondary-black p-3 transition duration-300 sm:ml-0 sm:mr-0 sm:min-w-0 sm:hover:scale-105;
   }
 
+  .artwork-card .category {
+    @apply flex h-8 w-12 items-center justify-center rounded-xl bg-[#c4c4c4] bg-opacity-20;
+  }
+
+  .artwork-card .countdown {
+    @apply absolute bottom-0 left-0 flex h-[29px] w-full items-center justify-center bg-[#262D3A] bg-opacity-80;
+  }
+
   .category-capsule {
     @apply flex items-center rounded-[20px] py-3 px-6 transition duration-300 sm:m-0;
   }
@@ -47,7 +55,31 @@
     @apply flex items-center;
   }
 
+  .artist-tile > .no {
+    @apply mr-2 font-semibold;
+  }
+
+  .artist-tile .name {
+    @apply mr-4 overflow-hidden text-ellipsis  whitespace-nowrap text-heading-5 font-medium;
+  }
+
+  .artist-tile .username {
+    @apply text-heading-6 text-primary-gray;
+  }
+
+  .artist-tile .button-following {
+    @apply cursor-pointer text-xs text-primary-purple;
+  }
+
+  .artist-tile .button-follow {
+    @apply h-[30px] cursor-pointer rounded-lg px-[10px] text-heading-6 transition duration-300 hover:opacity-70;
+  }
+
   .activity-tile {
     @apply flex h-[67px] w-full items-center rounded-xl bg-white bg-opacity-5 p-3;
+  }
+
+  .dashboard-menu-tile {
+    @apply flex h-[84px] cursor-pointer items-center gap-9 px-8 transition duration-300 hover:bg-white hover:bg-opacity-5 hover:opacity-70 lg:justify-center;
   }
 }

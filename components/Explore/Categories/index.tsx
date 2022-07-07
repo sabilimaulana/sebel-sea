@@ -22,7 +22,7 @@ const Categories = () => {
           key={category}
           category={category}
           classNames={`${
-            index === 0 ? 'ml-4' : index === categories.length - 1 && 'mr-4'
+            index === 0 ? 'ml-4' : index === categories.length - 1 ? 'mr-4' : ''
           } ${
             selectedCategory === category
               ? 'bg-white bg-opacity-30 border-2 border-[#7B6FE5]'
